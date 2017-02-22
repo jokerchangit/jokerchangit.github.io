@@ -1,0 +1,31 @@
+
+.first img {
+    height: 300px;
+    width: auto;
+    border-radius: 10px;
+}
+.reveal .slides  h2 {
+    font-family: Arial,"微软雅黑";
+}
+
+i {
+    font-style: normal;
+    padding: 10px;
+}
+.first p {
+    margin: 20px 0;
+}
+.f-md {
+    font-size: 24px;
+}
+.f-sm {
+    font-size: 16px;
+}
+li {
+    list-style: none;
+}
+.more li {
+    display: inline-block;
+    border-right: 4px solid #ddd;
+    padding-right: 6px;
+}
