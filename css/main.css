@@ -7,7 +7,20 @@
 .reveal .slides  h2 {
     font-family: Arial,"微软雅黑";
 }
-
+.main {
+    position: relative;
+}
+.main .left {
+    float: left;
+    width:50%;
+}
+.main .right {
+    float: right;
+    width: 50%;
+}
+img {
+    outline: none;
+}
 i {
     font-style: normal;
     padding: 10px;
