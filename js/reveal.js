@@ -49,7 +49,7 @@
 			minScale: 0.2,
 			maxScale: 1.5,
 
-			// Display controls in the bottom right corner
+			// Display controllers in the bottom right corner
 			controls: true,
 
 			// Display a presentation progress bar
@@ -419,7 +419,7 @@
 		// Listen to messages posted to this window
 		setupPostMessage();
 
-		// Prevent the slides from being scrolled out of view
+		// Prevent the slides from being scrolled out of views
 		setupScrollPrevention();
 
 		// Resets all vertical slides so that only the first is visible
@@ -482,7 +482,7 @@
 		dom.progress = createSingletonNode( dom.wrapper, 'div', 'progress', '<span></span>' );
 		dom.progressbar = dom.progress.querySelector( 'span' );
 
-		// Arrow controls
+		// Arrow controllers
 		createSingletonNode( dom.wrapper, 'aside', 'controls',
 			'<button class="navigate-left" aria-label="previous slide"></button>' +
 			'<button class="navigate-right" aria-label="next slide"></button>' +
@@ -505,7 +505,7 @@
 
 		dom.wrapper.setAttribute( 'role', 'application' );
 
-		// There can be multiple instances of controls throughout the page
+		// There can be multiple instances of controllers throughout the page
 		dom.controlsLeft = toArray( document.querySelectorAll( '.navigate-left' ) );
 		dom.controlsRight = toArray( document.querySelectorAll( '.navigate-right' ) );
 		dom.controlsUp = toArray( document.querySelectorAll( '.navigate-up' ) );
@@ -654,7 +654,7 @@
 	 * This is an unfortunate necessity. Some actions – such as
 	 * an input field being focused in an iframe or using the
 	 * keyboard to expand text selection beyond the bounds of
-	 * a slide – can trigger our content to be pushed out of view.
+	 * a slide – can trigger our content to be pushed out of views.
 	 * This scrolling can not be prevented by hiding overflow in
 	 * CSS (we already do) so we have to resort to repeatedly
 	 * checking if the slides have been offset :(
@@ -966,13 +966,13 @@
 			enablePreviewLinks( '[data-preview-link]' );
 		}
 
-		// Remove existing auto-slide controls
+		// Remove existing auto-slide controllers
 		if( autoSlidePlayer ) {
 			autoSlidePlayer.destroy();
 			autoSlidePlayer = null;
 		}
 
-		// Generate auto-slide controls if needed
+		// Generate auto-slide controllers if needed
 		if( numberOfSlides > 1 && config.autoSlide && config.autoSlideStoppable && features.canvas && features.requestAnimationFrame ) {
 			autoSlidePlayer = new Playback( dom.wrapper, function() {
 				return Math.min( Math.max( ( Date.now() - autoSlideStartTime ) / autoSlide, 0 ), 1 );
@@ -2489,7 +2489,7 @@
 			// be visible
 			var viewDistance = isOverview() ? 10 : config.viewDistance;
 
-			// Limit view distance on weaker devices
+			// Limit views distance on weaker devices
 			if( isMobileDevice ) {
 				viewDistance = isOverview() ? 6 : 2;
 			}
@@ -2514,7 +2514,7 @@
 					distanceX = Math.abs( ( ( indexh || 0 ) - x ) % ( horizontalSlidesLength - viewDistance ) ) || 0;
 				}
 
-				// Show the horizontal slide if it's within the view distance
+				// Show the horizontal slide if it's within the views distance
 				if( distanceX < viewDistance ) {
 					showSlide( horizontalSlide );
 				}
@@ -2874,7 +2874,7 @@
 	}
 
 	/**
-	 * Called when the given slide is within the configured view
+	 * Called when the given slide is within the configured views
 	 * distance. Shows the slide element and loads any content
 	 * that is set to load lazily (data-src).
 	 */
@@ -2964,7 +2964,7 @@
 
 	/**
 	 * Called when the given slide is moved outside of the
-	 * configured view distance.
+	 * configured views distance.
 	 */
 	function hideSlide( slide ) {
 
@@ -2997,7 +2997,7 @@
 			down: indexv < verticalSlides.length - 1
 		};
 
-		// reverse horizontal controls for rtl
+		// reverse horizontal controllers for rtl
 		if( config.rtl ) {
 			var left = routes.left;
 			routes.left = routes.right;
@@ -4379,7 +4379,7 @@
 	}
 
 	/**
-	 * Handles click on the auto-sliding controls element.
+	 * Handles click on the auto-sliding controllers element.
 	 */
 	function onAutoSlidePlayerClick( event ) {
 
@@ -4407,7 +4407,7 @@
 
 	/**
 	 * Constructor for the playback component, which displays
-	 * play/pause/progress controls.
+	 * play/pause/progress controllers.
 	 *
 	 * @param {HTMLElement} container The component will append
 	 * itself to this
